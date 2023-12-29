@@ -1,0 +1,26 @@
+Step1 : Install virtual box on windows 
+please follow the link below to install virtual box on windows machine
+https://www.virtualbox.org/manual/ch02.html
+
+Step2:
+Install vagrant on windows
+Please follow the link below to install vagrant on your system
+https://developer.hashicorp.com/vagrant/tutorials/getting-started/getting-started-install
+
+Step3:
+On windows create a folder example (Note: you can name your foler as per your choice)
+C:\Users\shaki\centos7 (Note: Centos is the name of the folder)
+open command prompt 
+Go to start search for command prompt and click on the search result to open the same 
+
+Inside the command prompt go to the folder where you have created the above folder in my case centos7
+
+cd C:\Users\shaki\centos7
+type dir to make sure you are in the right folder
+
+Run the below command to set up the centos7 vm
+vagrant init centos/7
+vagrant up
+
+Once completed in order to login to the vm type the below command
+vagrant ssh

@@ -1,0 +1,64 @@
+
+
+
+Jenkins Pipeline Build Status.
+
+Example consolidated email for multiple Jenkins pipeline
+
+Subject: Jenkins Pipeline Build Status Update
+
+Dear [Recipient],
+
+I hope this email finds you well. I am writing to provide you with an update on the status of the Jenkins pipeline builds.
+
+Over the past week, we have had several pipeline builds running for different projects, and I am pleased to report that all of them have been successful. Below is a summary of the builds:
+
+Project 1 - Build Status: Success Pipeline Name: Project1_Build Build Number: #123 Git Branch: master Build Date: 2023-02-25 Build Time: 10:30 AM
+
+Project 2 - Build Status: Success Pipeline Name: Project2_Build Build Number: #456 Git Branch: development Build Date: 2023-02-26 Build Time: 11:00 AM
+
+Project 3 - Build Status: Success Pipeline Name: Project3_Build Build Number: #789 Git Branch: feature-branch Build Date: 2023-02-27 Build Time: 9:30 AM
+
+I would also like to take this opportunity to remind you that if you have any concerns or questions regarding any of the pipeline builds, please do not hesitate to reach out to me.
+
+Thank you for your attention, and have a great day.
+
+Best regards, [Your Name]
+
+
+How to configure consolidated email for multiple Jenkins pipeline using plugin
+
+To configure a consolidated email for multiple Jenkins pipelines using a plugin, you can use the Email Extension Plugin. Here are the steps to set it up:
+
+Install the Email Extension Plugin: Go to Manage Jenkins > Manage Plugins > Available and search for "Email Extension Plugin". Install it and restart Jenkins.
+
+Configure the SMTP server: Go to Manage Jenkins > Configure System and scroll down to the "E-mail Notification" section. Enter the SMTP server details and test the connection.
+
+Configure the email template: Go to Manage Jenkins > Extended E-mail Notification and click on the "Advanced" tab. In the "Default Content" section, enter the email template that you want to use. You can use variables to include information about the pipelines, such as the build status and date/time.
+
+Here is an example email template:
+
+Subject: Jenkins Pipeline Build Status Update
+
+Dear ${ENV, var="BUILD_USER"} ,
+
+I am writing to provide you with an update on the status of the Jenkins pipeline builds.
+
+Below is a summary of the builds:
+
+${JELLY_SCRIPT, template="table-template.jelly"}
+
+I would also like to take this opportunity to remind you that if you have any concerns or questions regarding any of the pipeline builds, please do not hesitate to reach out to me.
+
+Thank you for your attention, and have a great day.
+
+Best regards, [Your Name]
+
+Create a pipeline view: Go to the Jenkins dashboard and click on the "+" icon to create a new view. Choose "List View" and give it a name. Add the pipelines that you want to monitor to the view.
+
+Configure the post-build action: Go to the configuration page of each pipeline and add a post-build action to send an email. Choose "Editable Email Notification" and enter the recipients and other details. In the "Content" section, choose "Use Default Content" and select the email template that you configured in step 3.
+
+That's it! Jenkins will now send a consolidated email to the recipients with the build status of all the pipelines in the view
+ 
+
+

@@ -1,0 +1,16 @@
+Example Jenkins .war file on S3 Bucket Aws
+
+First, make sure you have the AWS Command Line Interface (CLI) installed on your Jenkins server. You can download it from the official AWS CLI website: https://aws.amazon.com/cli/
+
+Next, configure the AWS CLI by running the following command on your Jenkins server:
+aws configure
+
+This command will prompt you to enter your AWS Access Key ID, AWS Secret Access Key, default region name, and default output format. You can obtain these credentials from your AWS account.
+
+In your Jenkins project, add a build step to package your application into a .war file. You can use Maven or Gradle to build your application, or any other tool of your choice.
+
+After your application is packaged into a .war file, add another build step to copy the .war file to your S3 bucket. You can use the following command:
+
+bash
+aws s3 cp path/to/your/app.war s3://your-bucket-name/path/to/your/app.war
+This command will upload the .war file to your S3 bucket. Make sure to replace "your-bucket-name" with the name of your S3 bucket, and "path/to/your/app.war" with the actual path to your .war file.
